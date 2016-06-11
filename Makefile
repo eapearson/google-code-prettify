@@ -15,10 +15,14 @@ YUI_COMPRESSOR=java -jar tools/yui-compressor/yuicompressor-2.4.4.jar \
 
 TAR_ROOT=distrib/google-code-prettify
 
-all: distrib
+AMD_LIB_ROOT=distrib/amd
+
+all: distrib distrib-amd
 
 clean:
 	rm -rf distrib.tstamp distrib src/prettify.js src/run_prettify.js
+	
+	
 
 src/prettify.js: js-modules/*.js js-modules/*.pl
 	@if [ -e "$@" ]; then chmod +w "$@"; fi
@@ -33,6 +37,14 @@ src/run_prettify.js: js-modules/*.js js-modules/*.pl
 distrib: distrib.tstamp distrib/prettify-small.tgz distrib/prettify-small.zip distrib/prettify-small.tar.bz2
 	@wc -c distrib/prettify-small.{tar.bz2,tgz,zip} \
 	    | grep -v total
+
+distrib-amd: src/prettify.js src/run_prettify.js src/*.js src/*.css
+	@echo Compiling Lib
+	@mkdir -p $(AMD_LIB_ROOT)
+	cp src/*.css $(AMD_LIB_ROOT)
+	cp src/prettify.js $(AMD_LIB_ROOT)
+	cp src/run_prettify.js $(AMD_LIB_ROOT)
+	cp src/lang-*.js $(AMD_LIB_ROOT)
 
 distrib.tstamp: src/prettify.js src/run_prettify.js src/*.js src/*.css
 	@echo Compiling
