@@ -1040,7 +1040,7 @@ var prettyPrint;
   // other existing JavaScript code that could have defined a define()
   // function that does not conform to the AMD API.
   if (typeof define === "function" && define['amd']) {
-    define("google-code-prettify", [], function () {
+    define([], function () {
       return PR; 
     });
   }
