@@ -25,7 +25,7 @@ function numberLines(node, opt_startLineNum, isPreformatted) {
 
   function walk(node) {
     var type = node.nodeType;
-    if (type == 1 && !nocode.test(node.className)) {  // Element
+    if (type === 1 && !nocode.test(node.className)) {  // Element
       if ('br' === node.nodeName) {
         breakAfter(node);
         // Discard the <BR> since it is now flush against a </LI>.
@@ -37,7 +37,7 @@ function numberLines(node, opt_startLineNum, isPreformatted) {
           walk(child);
         }
       }
-    } else if ((type == 3 || type == 4) && isPreformatted) {  // Text
+    } else if ((type === 3 || type === 4) && isPreformatted) {  // Text
       var text = node.nodeValue;
       var match = text.match(lineBreak);
       if (match) {
