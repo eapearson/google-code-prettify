@@ -1,3 +1,7 @@
+/*global define */
+/*jslint white:true */
+define(["./prettify"], function (PR) {
+"use strict";
 // Copyright (C) 2011 Patrick Wied
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -65,3 +69,6 @@ PR['registerLangHandler'](
          [PR['PR_PLAIN'], /^[\t\n\r \xA0]+/]
          ]),
     ['xq', 'xquery']);
+
+return;
+});

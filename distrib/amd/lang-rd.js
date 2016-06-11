@@ -1,3 +1,7 @@
+/*global define */
+/*jslint white:true */
+define(["./prettify"], function (PR) {
+"use strict";
 // Copyright (C) 2012 Jeffrey Arnold
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -45,3 +49,6 @@ PR['registerLangHandler'](
             [PR['PR_PUNCTUATION'], /^[{}()\[\]]+/]
         ]),
     ['Rd', 'rd']);
+
+return;
+});

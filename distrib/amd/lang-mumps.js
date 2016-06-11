@@ -1,3 +1,7 @@
+/*global define */
+/*jslint white:true */
+define(["./prettify"], function (PR) {
+"use strict";
 // Copyright (C) 2011 Kitware Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -137,3 +141,6 @@ var fallthroughStylePatterns = [
 // Can't use m as its already used for MatLab
 PR.registerLangHandler(PR.createSimpleLexer(shortcutStylePatterns, fallthroughStylePatterns), ['mumps']);
 })();
+
+return;
+});

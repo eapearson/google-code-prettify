@@ -1,3 +1,7 @@
+/*global define */
+/*jslint white:true */
+define(["./prettify"], function (PR) {
+"use strict";
 /**
  * @license Copyright (C) 2011 Google Inc.
  *
@@ -62,3 +66,6 @@ PR['registerLangHandler'](
          [PR['PR_TYPE'], /^:[0-9a-zA-Z\-]+/]
         ]),
     ['clj']);
+
+return;
+});

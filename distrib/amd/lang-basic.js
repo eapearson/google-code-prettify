@@ -1,3 +1,7 @@
+/*global define */
+/*jslint white:true */
+define(["./prettify"], function (PR) {
+"use strict";
 // Contributed by peter dot kofler at code minus cop dot org
 
 /**
@@ -30,3 +34,6 @@ PR.registerLangHandler(
           // [PR.PR_PUNCTUATION,   /^[-,:;!<>=\+^\/\*]+/]
         ]),
     ['basic','cbm']);
+
+return;
+});

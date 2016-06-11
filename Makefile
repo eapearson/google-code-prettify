@@ -17,12 +17,10 @@ TAR_ROOT=distrib/google-code-prettify
 
 AMD_LIB_ROOT=distrib/amd
 
-all: distrib distrib-amd
+all: clean distrib distrib-amd
 
 clean:
 	rm -rf distrib.tstamp distrib src/prettify.js src/run_prettify.js
-	
-	
 
 src/prettify.js: js-modules/*.js js-modules/*.pl
 	@if [ -e "$@" ]; then chmod +w "$@"; fi
@@ -44,7 +42,9 @@ distrib-amd: src/prettify.js src/run_prettify.js src/*.js src/*.css
 	cp src/*.css $(AMD_LIB_ROOT)
 	cp src/prettify.js $(AMD_LIB_ROOT)
 	cp src/run_prettify.js $(AMD_LIB_ROOT)
-	cp src/lang-*.js $(AMD_LIB_ROOT)
+	# wrap the lang files into amd modules.
+	# cp src/lang-*.js $(AMD_LIB_ROOT)
+	grunt build-langs
 
 distrib.tstamp: src/prettify.js src/run_prettify.js src/*.js src/*.css
 	@echo Compiling

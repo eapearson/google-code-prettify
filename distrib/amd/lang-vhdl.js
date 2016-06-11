@@ -1,3 +1,7 @@
+/*global define */
+/*jslint white:true */
+define(["./prettify"], function (PR) {
+"use strict";
 /**
  * @fileoverview
  * Registers a language handler for VHDL '93.
@@ -32,3 +36,6 @@ PR['registerLangHandler'](
          [PR['PR_PUNCTUATION'], /^[^\w\t\n\r \xA0\"\'][^\w\t\n\r \xA0\-\"\']*/]
         ]),
     ['vhdl', 'vhd']);
+
+return;
+});

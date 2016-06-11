@@ -1,3 +1,7 @@
+/*global define */
+/*jslint white:true */
+define(["./prettify"], function (PR) {
+"use strict";
 // Contributed by ribrdb @ code.google.com
 
 /**
@@ -25,3 +29,6 @@ PR['registerLangHandler'](
       [PR['PR_KEYWORD'], /^\w+:[ \r\n]/],
       [PR['PR_PLAIN'], /^\w+/]
     ]), ['yaml', 'yml']);
+
+return;
+});
